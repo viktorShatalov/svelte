@@ -25,7 +25,7 @@
         ).catch((error) => console.log(error));
         lawyer = await res.json();
         lawyers = Object.values(lawyer)[0];
-        types = lawyers.map((i) => i.types.map((item) => item.name));
+        types = lawyers.map((i) => i.types.map((y) => y.name));
         console.log(types);
     });
 </script>
@@ -34,11 +34,11 @@
     <ul class:item>
         {#each lawyers as item (item.id)}
             <li>
-                <a href={linkToRegistration} target="_blank">
-                    <span>
-                        {item.date_start.split(".")[0].slice(14)}
-                    </span>
-                </a>
+                <!-- <a href={linkToRegistration} target="_blank"> -->
+                <span>
+                    {item.date_start.split(".")[0].slice(11, -3)}
+                </span>
+                <!-- </a> -->
             </li>
         {/each}
     </ul>
@@ -53,6 +53,17 @@
         padding: 0;
     }
     .item li {
-        padding-bottom: 20px;
+        width: 100%;
+        max-width: 130px;
+        margin: 0 auto 10px;
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #ebeeee;
+        background-color: #fddc03;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.6px;
+        padding: 10px 5px 10px 10px;
     }
 </style>
