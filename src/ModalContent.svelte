@@ -38,7 +38,6 @@
                     <span>
                         {item.date_start.split(".")[0].slice(14)}
                     </span>
-                    <span>{types}</span>
                 </a>
             </li>
         {/each}
