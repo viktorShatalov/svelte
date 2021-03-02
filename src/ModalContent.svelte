@@ -34,11 +34,11 @@
     <ul class:item>
         {#each lawyers as item (item.id)}
             <li>
-                <!-- <a href={linkToRegistration} target="_blank"> -->
-                <span>
-                    {item.date_start.split(".")[0].slice(11, -3)}
-                </span>
-                <!-- </a> -->
+                <a href={linkToRegistration} target="_blank">
+                    <span>
+                        {item.date_start.split(".")[0].slice(11, -3)}
+                    </span>
+                </a>
             </li>
         {/each}
     </ul>
@@ -65,5 +65,9 @@
         font-size: 13px;
         letter-spacing: 0.6px;
         padding: 10px 5px 10px 10px;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
     }
 </style>
